@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator By - Aryan Inguz</title>
+
+<style>
+    
+    body{
+        background-color: azure;
+    }
+    
+.flex{
+    display: flex;
+    width: 95vw;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    width: 50vw;
+    height: 50vh;
+    background-color: #fff;
+}
+
+input{
+    width: 40vw;
+    height: 40px;
+}
+button{
+    width:70px;
+    height:40px;
+    border: 2px solid black;
+    border-radius: 13px;
+    box-shadow: 2s;
+}
+
+button:hover{
+    background-color: azure;
+}
+
+h1{
+    align-self: flex-start;
+    font-size: xx-large;
+    font-family:sans-serif;
+    color:rgb(41, 46, 199) ;
+}
+span{
+    background-color: yellow;
+}
+</style>
+
+</head>
+<body style="text-align: center; margin-top: 50px;">
+
+    <h1>
+     <span>Calculator By - Aryan Inguz</span>   
+    </h1>
+    <div class="flex">
+
+        <table style="background-color: black;">
+        
+            <tr >
+               <th colspan="5" > <input type="search" id="bar" value="0"></th>
+            </tr>
+          
+            <tr>
+                <th> <button value="0" onclick="disp('0')">0</button> </th>
+                <th> <button value="1" onclick="disp('1')">1</button></th>
+                <th> <button value="2" onclick="disp('2')">2</button></th>
+                
+                <th> <button value="+" onclick="disp('+')">+</button> </th>
+                
+            </tr>
+            <tr>
+                <th> <button value="3" onclick="disp('3')">3</button></th>
+                <th> <button value="4" onclick="disp('4')">4</button> </th>
+                <th> <button value="5" onclick="disp('5')">5</button></th>
+               
+
+                <th> <button value="-" onclick="disp('-')">-</button></th>
+               
+            </tr>
+            <tr>
+                <th> <button value="6" onclick="disp('6')">6</button></th>
+                <th> <button value="7" onclick="disp('7')">7</button></th>
+                <th> <button value="8" onclick="disp('8')">8</button> </th>
+
+                <th> <button value="/" onclick="disp('/')">/</button></th>
+
+               
+            </tr>
+            <tr>
+                
+                <th> <button value="9" onclick="disp('9')">9</button></th>
+               
+                
+                <th> <button onclick="c1()">c</button></th>
+                <th> <button value="equal" onclick="bar('=')">=</button></th>
+                <th> <button value="*" onclick="disp('*')">x</button></th>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th></th>
+                <th> <button onclick="c()">clear</button></th>
+                
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function disp(val)
+        {
+            document.getElementById("bar").value+=val;
+            console.log(val)
+        }
+        function bar(val){
+            x=document.getElementById("bar").value;
+            y=eval(x);
+            document.getElementById('bar').value=y;
+
+        }
+
+        function c(){
+            document.getElementById('bar').value = 0
+
+        }
+        function c1(){
+           let a =  document.getElementById('bar').value;
+           console.log(typeof a)
+           document.getElementById('bar').value=a.slice(0,-1)
+        }
+    </script>
+
+
+
+
+</body>
+</html>
